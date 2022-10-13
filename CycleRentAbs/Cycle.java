@@ -17,8 +17,8 @@ public class Cycle {
         if(cycle1.available == true){
             System.out.println("available for rent ! " );
             System.out.println("color: " + this.color);
-            System.out.println("Two person can use bicycle");
-
+            System.out.println(cycle1.somePeople+" person can use bicycle");
+            cycle1.available = false;
         }
         else {
             System.out.println("bicycle has already rented. ");
