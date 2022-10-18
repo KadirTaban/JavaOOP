@@ -26,7 +26,7 @@ public class Student {
     public static double calcOverall(int[] arr){
         double overall = 0 ;
         for(int i=0; i<arr.length;i++){
-            overall +=arr[i];
+            overall =+ arr[i];
         }
         return overall / arr.length;
     } 
