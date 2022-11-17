@@ -1,5 +1,6 @@
 package RockScissorsPaperGame;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Gamer {
@@ -15,6 +16,7 @@ public class Gamer {
     public void move(){
         Scanner input = new Scanner(System.in);
         boolean isInputInvalid = false;
+        numofTrials ++;
 
         do{
             char userChoice = input.next().charAt(0);
@@ -45,7 +47,21 @@ public class Gamer {
         }
 
         }while(isInputInvalid);
+    }
 
+
+    public void autoMove(){
+        this.sign = getRandomSign();
+        System.out.println(this.sign);
+    
+        
 
     }
+
+    public static HandSign getRandomSign(){
+
+        int pick = new Random().nextInt(HandSign.values().length);
+        return HandSign.values()[pick];
+    }
+    
 }

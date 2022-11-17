@@ -10,12 +10,13 @@ public class GameArena {
     }
 
     void startGame() {
-        while(!isGameOver){
+        while(Gamer.numofTrials<4){
             System.out.println(gamer1.name+"'s turn. play!");
-            gamer1.move();
+            gamer1.autoMove();
             System.out.println(gamer2.name+"'s turn. play!");
-            gamer2.move();
+            gamer2.autoMove();
             ProcessMoves();
+            Gamer.numofTrials++;
         }
         ShowResults();
     }
@@ -40,6 +41,7 @@ public class GameArena {
         }
 
     }
+
 
     private void ShowResults() {
         System.out.printf("Gamer name: %s WINS: %d",gamer1.name,gamer1.wins);
