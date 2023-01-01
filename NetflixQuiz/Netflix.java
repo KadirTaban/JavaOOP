@@ -8,13 +8,14 @@ public class Netflix {
     User credential;
     boolean isLogin = false;
 
-    Netflix(List <Material> materials, User credential){
-        this.materials = materials;
+    Netflix(Movie movie, User credential){
+        this.materials.add(movie);
         this.credential = credential;
     }
 
+   
     boolean login(User user){
-        if(user.password==credential.password && user.userName.equals(credential.userName)){
+        if(user.password.equals(credential.password) && user.userName.equals(credential.userName)){
             isLogin = true;
             return isLogin;
         }
@@ -23,20 +24,20 @@ public class Netflix {
     }
 
     public void addMovie(Movie movie){
-        if(login(this.credential) == true){
-            addMovie(movie);
+        if(isLogin){
+            this.materials.add(movie);
         }
     }
 
     public void addBook(Book book){
-        if(login(this.credential) == true){
-            addBook(book);
+        if(isLogin){
+            this.materials.add(book);
         }
     }
 
     public void addMaterial(Material material){
-        if(login(this.credential) == true){
-            addMaterial(material);
+        if(isLogin){
+            this.materials.add(material);
         }
     }
 
