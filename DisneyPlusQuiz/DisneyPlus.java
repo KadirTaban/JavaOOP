@@ -81,7 +81,7 @@ public class DisneyPlus {
         for(Asset a :movies){
             averages.add(a.getAvgScore());
         }
-
+        
         System.out.printf(Collections.min(averages)+"has the lowest average  ");
     }
 //N3-Create a function that takes a "movie_id" as a parameter and displays information of highest paid actor in that movie.
